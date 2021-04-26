@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: my-set
+  labels:
+    name: my-set
+spec:
+  serviceName: my-set-svc
+  replicas: 3
+  selector:
+    matchLabels:
+      name: my-set
+  template:
+    metadata:
+      labels:
+        name: my-set
+    spec:
+      containers:
+      - name: my-set
+        image: alpine:latest
+        imagePullPolicy: Always
+        command:
+        - /bin/sh
+        - -c
+        args:
+        - echo "Starting statefulset pod"; cat /etc/app/conf/set.conf; while true; do sleep 600; done
+        volumeMounts:
+        - name: conf-vol
+          mountPath: /etc/app/conf
+      initContainers:
+      - name: init-set
+        image: alpine:latest
+        command:
+        - /mnt/scripts/run.sh
+        volumeMounts:
+        - name: scripts-vol
+          mountPath: /mnt/scripts
+        - name: conf-vol
+          mountPath: /mnt/data
+      volumes:
+      - name: scripts-vol
+        configMap:
+          name: my-set-config
+          defaultMode: 0555
+      - name: conf-vol
+        emptyDir: {}

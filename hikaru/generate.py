@@ -26,6 +26,7 @@ from typing import List, TextIO, Optional
 from autopep8 import fix_code
 from black import format_file_contents, FileMode
 from ruamel.yaml import YAML
+from yaml import load, dump
 
 from hikaru.model import *
 from hikaru.meta import HikaruBase
@@ -135,11 +136,11 @@ def get_yaml(obj: HikaruBase) -> str:
     if not isinstance(obj, HikaruBase):
         raise TypeError("obj must be a kind of HikaruBase")
     d: dict = get_clean_dict(obj)
-    yaml = YAML(typ="safe")
-    yaml.indent(offset=2, sequence=4)
-    sio = StringIO()
-    yaml.dump(d, sio)
-    return "\n".join(["---", sio.getvalue()])
+    # yaml = YAML(typ="safe")
+    # yaml.indent(offset=2, sequence=4)
+    # sio = StringIO()
+    # yaml.dump(d, sio)
+    return "\n".join(["---", dump(d, default_flow_style=False)])
 
 
 def get_json(obj: HikaruBase) -> str:

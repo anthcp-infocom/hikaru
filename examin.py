@@ -9,13 +9,13 @@ x = Pod(apiVersion='v1', kind='Pod',
 
 print(get_yaml(x))
 
-with open("ap.yaml", "w") as text_file:
+with open("examples/pod.yaml", "w") as text_file:
     text_file.write(get_yaml(x))
 
-docs = load_full_yaml(path="ap.yaml")
+docs = load_full_yaml(path="examples/pod.yaml")
 print(get_python_source(docs[0], assign_to='x', style="black"))
 
-docs = load_full_yaml(path="route.yaml")
+docs = load_full_yaml(path="examples/route.yaml")
 print(get_python_source(docs[0], assign_to='x', style="black"))
 
 y = Route(
@@ -31,7 +31,7 @@ y = Route(
 
 print(get_yaml(y))
 
-docs = load_full_yaml(path="StatefullSet.yaml")
+docs = load_full_yaml(path="examples/StatefullSet.yaml")
 print(get_python_source(docs[0], assign_to='x', style="black"))
 
 z = StatefulSet(

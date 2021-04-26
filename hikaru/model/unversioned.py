@@ -31,6 +31,16 @@ from typing import Optional, List, Dict
 from dataclasses import dataclass, field
 
 
+class IntOrString(str):
+    """
+    IntOrString is a type that can hold an int32 or a string. When used in JSON or YAML
+    marshalling and unmarshalling, it produces or consumes the inner type. This allows you
+    to have, for example, a JSON field that can accept a name or number.
+
+    Full name: io.k8s.apimachinery.pkg.util.intstr.IntOrString
+    """
+
+
 @dataclass
 class RawExtension(HikaruBase):
     """
@@ -54,16 +64,6 @@ class RawExtension(HikaruBase):
     Full name: io.k8s.apimachinery.pkg.runtime.RawExtension
 
     Attributes:
-    """
-
-
-class IntOrString(str):
-    """
-    IntOrString is a type that can hold an int32 or a string. When used in JSON or YAML
-    marshalling and unmarshalling, it produces or consumes the inner type. This allows you
-    to have, for example, a JSON field that can accept a name or number.
-
-    Full name: io.k8s.apimachinery.pkg.util.intstr.IntOrString
     """
 
 
