@@ -1,16 +1,4 @@
 
-.. |travis| image:: https://travis-ci.com/haxsaw/hikaru.svg?branch=dev
-    :target: https://travis-ci.com/haxsaw/hikaru
-
-.. |license| image:: https://img.shields.io/github/license/haxsaw/hikaru
-   :alt: GitHub license   :target: https://github.com/haxsaw/hikaru/blob/main/LICENSE
-
-.. |versions| image:: https://img.shields.io/pypi/pyversions/hikaru
-   :alt: PyPI - Python Version
-
-.. |coverage| image:: https://codecov.io/gh/haxsaw/hikaru/branch/main/graph/badge.svg?token=QOFGNVHGNP
-   :target: https://codecov.io/gh/haxsaw/hikaru
-
 ======
 Hikaru
 ======

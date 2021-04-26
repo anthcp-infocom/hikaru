@@ -2,6 +2,11 @@
 Release Notes
 *************
 
+v0.2a1
+------
+Adding in OpenShift Routes
+Added PyYaml to fix get_yaml issue on Mac OSX
+
 v0.2a0
 ------
 

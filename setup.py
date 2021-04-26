@@ -1,10 +1,10 @@
 from setuptools import setup
 
-__version__ = "v0.2a0"
+__version__ = "v0.2a1"
 
 
 def get_long_desc():
-    return open('README.rst', 'r').read()
+    return open('README.md', 'r').read()
 
 
 def get_requirements():
@@ -20,11 +20,11 @@ setup(
     description="Hikaru allows you to smoothly move between Kubernetes YAML, "
                 "Python objects, and Python source, in any direction",
     long_description=get_long_desc(),
-    long_description_content_type="text/x-rst",
+    long_description_content_type="text/markdown",
     author="Tom Carroll",
     author_email="tcarroll@incisivetech.co.uk",
-    url="https://github.com/haxsaw/hikaru",
-    download_url=f"https://github.com/haxsaw/hikaru/archive/{__version__}.tar.gz",
+    url="https://github.com/anthcp-infocom/hikaru",
+    download_url=f"https://github.com/anthcp-infocom/hikaru/archive/{__version__}.tar.gz",
     keywords=["Kubernetes", "modelling", "YAML", "JSON", "modeling",
               "translate", "translator", "reformatter", "transform"],
     install_requires=get_requirements(),
